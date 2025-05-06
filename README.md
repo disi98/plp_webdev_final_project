@@ -12,4 +12,4 @@
 ```
 
 ### Clone the repository to get the and run the files locally
-### View the website at 
+### View the website at https://plp-webdev-final-project.vercel.app/index.html
