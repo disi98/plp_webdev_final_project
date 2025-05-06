@@ -17,12 +17,12 @@ window.addEventListener('scroll', () => {
   });
   
   // Animate portfolio cards when in view
-  const observer = new IntersectionObserver(
+  const cardObserver = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target); // Animate once
+          cardObserver.unobserve(entry.target); // Animate once
         }
       });
     },
@@ -32,6 +32,49 @@ window.addEventListener('scroll', () => {
   );
   
   document.querySelectorAll('.card').forEach(card => {
-    observer.observe(card);
+    cardObserver.observe(card);
+  });
+  
+  // Animate skill progress bars when in view
+const skillObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const fill = entry.target.querySelector('.skill-fill');
+          const targetWidth = fill.getAttribute('data-width');
+          fill.style.width = targetWidth;
+          skillObserver.unobserve(entry.target); // Animate once
+        }
+      });
+    },
+    {
+      threshold: 0.1
+    }
+  );
+  
+  document.querySelectorAll('.skill').forEach(skill => {
+    skillObserver.observe(skill);
+  });
+  
+
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Retrieve form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const message = document.getElementById('message').value;
+  
+    // For demonstration, we'll just log the values
+    console.log('Name:', name);
+    console.log('Email:', email);
+    console.log('Phone:', phone);
+    console.log('Message:', message);
+  
+    // You can add your form submission logic here
+    // For example, sending the data to your server or an email service
+  
+    // Reset the form after submission
+    this.reset();
   });
   

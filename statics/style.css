@@ -208,18 +208,82 @@
     margin-right: 0.5rem;
     color: #444;
   }
-  
-  /* Animations */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* Skills Section */
+.skills-section {
+    padding: 4rem 1rem;
+    background-color: #ffffff;
   }
+  
+  .skills-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .skill {
+    margin-bottom: 1.5rem;
+  }
+  
+  .skill-name {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .skill-bar {
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    overflow: hidden;
+    height: 20px;
+  }
+  
+  .skill-fill {
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    transition: width 2s ease-in-out;
+  }
+  
+  /* Unique colors for each skill */
+  .skill-html .skill-fill {
+    background-color: #e34c26;
+  }
+  
+  .skill-python .skill-fill {
+    background-color: #306998;
+  }
+  
+  .skill-css .skill-fill {
+    background-color: #264de4;
+  }
+  
+  .skill-tailwindcss .skill-fill {
+    background-color: #38bdf8;
+  }
+  
+  .skill-javascript .skill-fill {
+    background-color: #f0db4f;
+  }
+  
+  .skill-sql .skill-fill {
+    background-color: #e38c00;
+  }
+  
+  .skill-postgres .skill-fill {
+    background-color: #336791;
+  }
+  
+  .skill-django .skill-fill {
+    background-color: #092e20;
+  }
+  
+  .skill-fastapi .skill-fill {
+    background-color: #009688;
+  }
+  
   
   /* Responsive */
   @media (max-width: 768px) {
@@ -255,7 +319,7 @@
     .nav-toggle {
       display: block;
     }
-
+  
     .logo {
       font-size: 1.2rem;
       margin-left: 2rem;
@@ -267,4 +331,203 @@
       max-width: 1024px;
     }
   }
+  
+
+
+
+/* Contact Section */
+.contact-section {
+    padding: 4rem 1rem;
+    background-color: #f9fbfd;
+    animation: fadeIn 1.5s ease-in;
+  }
+  
+  .contact-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .contact-section p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #555;
+  }
+  
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 1rem 0.5rem;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background: transparent;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-bottom-color: #0077ff;
+  }
+  
+  .form-group label {
+    position: absolute;
+    top: 1rem;
+    left: 0.5rem;
+    font-size: 1rem;
+    color: #999;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  
+  .form-group input:focus + label,
+  .form-group input:not(:placeholder-shown) + label,
+  .form-group textarea:focus + label,
+  .form-group textarea:not(:placeholder-shown) + label {
+    top: -0.5rem;
+    font-size: 0.85rem;
+    color: #0077ff;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #0077ff;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #005fcc;
+  }
+  
+  .contact-info {
+    text-align: center;
+    margin-top: 2rem;
+    color: #555;
+  }
+  
+  .contact-info p {
+    margin: 0.5rem 0;
+  }
+  
+  /* Fade-in Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  
+
+  .site-footer {
+    background-color: #111;
+    color: #fff;
+    padding: 2rem 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1024px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-in-out;
+  }
+  
+  .footer-about,
+  .footer-contact,
+  .footer-social {
+    flex: 1 1 300px;
+    margin: 1rem;
+  }
+  
+  .footer-about h3,
+  .footer-contact h4,
+  .footer-social h4 {
+    margin-bottom: 1rem;
+    color: #ffd700;
+  }
+  
+  .footer-contact a,
+  .footer-social a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-contact a:hover,
+  .footer-social a:hover {
+    color: #ffd700;
+  }
+  
+  .footer-social a {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+  
+  /* Animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-about,
+    .footer-contact,
+    .footer-social {
+      margin: 1rem 0;
+      text-align: center;
+    }
+  
+    .footer-social a {
+      margin: 0 0.5rem;
+    }
+  }
+  
   
