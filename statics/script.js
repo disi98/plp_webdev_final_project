@@ -78,3 +78,37 @@ const skillObserver = new IntersectionObserver(
     this.reset();
   });
   
+
+  
+
+// Observe resume blocks
+const resumeObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        resumeObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+document.querySelectorAll('.resume-block').forEach(block => {
+  resumeObserver.observe(block);
+});
+
+
+const toReveal = document.querySelectorAll('.hidden');
+const revealObserver = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+
+toReveal.forEach(el => revealObserver.observe(el));
+
+
